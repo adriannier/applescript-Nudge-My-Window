@@ -16,7 +16,7 @@ A dialog appears when the process is finished.
 
 Once the build process has finished, you will find the script files you can use with LaunchBar or Alfred in the Commands directory that is created in the directory of this project.
 
-The script files are stand-alone so you can place them wherever you want.
+The script files are self-contained so you can place them wherever you want.
 
 ## Usage
 
