@@ -14,31 +14,33 @@ A dialog appears when the process is finished.
 
 ## Installation
 
-Once the build process has finished, you will find the script files you can use with LaunchBar or Alfred in the Commands directory that is created in the directory of this project.
+Once the build process has finished, you will find the script files you can use with LaunchBar or Alfred in the Commands directory that is created in this project's directory.
 
 The script files are self-contained so you can place them wherever you want.
 
 ## Usage
 
-Select one of the script files in the Commands directory with LaunchBar or Alfred and run them.
+Select one of the script files in the Commands directory with LaunchBar or Alfred and run it.
 
 In LaunchBar for example, you could teach the abbreviation `nul` to select the script `Nudge My Window - left.scpt` or `nuot` to select the script `Nudge My Window - One Third Top.scpt`.
 
-Keep in mind that LaunchBar has the instant send feature where pressing and holding the last character of an abbreviation.
+Keep in mind that LaunchBar has the Instand Open feature: Pressing and holding the last character of an abbreviation immediately runs the script.
+
+## What’s a Screen?
+
+In the context of Nudge My Window the screen is defined as the area below the menu bar and if applicable minus the height or width taken up by the Dock.
 
 ## Multiple Screens
 
-Nudge My Window is designed to only work on the screen where the mouse pointer currently resides.
+While Nudge My Window supports multiple screens, it is designed to choose the screen where the mouse pointer currently resides as the target for the re-arranged window.
 
-So, for example, if you have the topmost window of your frontmost application on the second screen but the mouse pointer is currently on the first screen then the window will be transferred over to the first screen.
+So, for example, if you have the topmost window of your frontmost application on the second screen but the mouse pointer is currently on the first screen then the window will be arranged on the first screen.
 
 ## Built-in Commands
 
 All built-in commands act on the topmost window of the frontmost application.
 
 The most basic command is named `full` and simply resizes the window to fill the screen.
-
-Please note that in the context of Nudge My Window the screen is defined as the area below the menu bar and if applicable minus the height or width taken up by the Dock.
 
 ### Screen Halves
 
@@ -58,33 +60,31 @@ Please note that in the context of Nudge My Window the screen is defined as the 
 
 Each quadrant can be subdivided into its left, right, top, and bottom half.
 
-The following examples also apply to quadrants 2, 3, and 4.
-
 `1 left` Left half of quadrant 1  
 `1 right` Right half of quadrant 1  
 `1 top` Top half of quadrant 1  
 `1 bottom` Bottom half of quadrant 1
 
+These examples also apply to quadrants 2, 3, and 4.
+
 #### Sub-Quadrants
 
 Each quadrant can be subdivided into its sub-quadrants.
-
-The following examples also apply to quadrants 2, 3, and 4.
 
 `1 sub 1` Sub-quadrant 1 of quadrant 1  
 `1 sub 2` Sub-quadrant 2 of quadrant 1  
 `1 sub 3` Sub-quadrant 3 of quadrant 1  
 `1 sub 4` Sub-quadrant 4 of quadrant 1
 
+These examples also apply to quadrants 2, 3, and 4.
+
 ### Columns
 
-Windows can be arranged in one of four columns name `a`, `b`, `c`, and `d`.
+Windows can be arranged in one of four columns named `a`, `b`, `c`, and `d`.
 
 ### Thirds
 
-Here, the window is resized to either a third of the horizontal OR vertical screen size. The perpendicular side of the window is always resized to fill the screen.
-
-In other words, the window is either resized to be a column or a row.
+The screen is divided into thirds and the window is arranged either as a column or as a row.
 
 `one third left` Left column  
 `one third horizontal center` Center column  
@@ -124,7 +124,7 @@ The following commands move the window by 1/8th of the screen's width or height.
 
 ### Resizing
 
-These commands resize the window while keeping it position.
+These commands resize the window while keeping its position.
 
 `max width`  
 `max height`  
