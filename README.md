@@ -24,7 +24,7 @@ Select one of the script files in the Commands directory with LaunchBar or Alfre
 
 In LaunchBar for example, you could teach the abbreviation `nul` to select the script `Nudge My Window - left.scpt` or `nuot` to select the script `Nudge My Window - One Third Top.scpt`.
 
-Keep in mind that LaunchBar has the Instand Open feature: Pressing and holding the last character of an abbreviation immediately runs the script.
+Keep in mind that LaunchBar has the [Instant Open](https://www.obdev.at/resources/launchbar/help/InstantOpen.html) feature: Pressing and holding the last character of an abbreviation immediately runs the script.
 
 ## What’s a Screen?
 
