@@ -22,7 +22,15 @@ The script files are stand-alone so you can place them wherever you want.
 
 Select one of the script files in the Commands directory with LaunchBar or Alfred and run them.
 
-In LaunchBar for example, you could teach `nul` to select the script `Nudge My Window - left.scpt` or `nuot` to select the script `Nudge My Window - One Third Top.scpt`.
+In LaunchBar for example, you could teach the abbreviation `nul` to select the script `Nudge My Window - left.scpt` or `nuot` to select the script `Nudge My Window - One Third Top.scpt`.
+
+Keep in mind that LaunchBar has the instant send feature where pressing and holding the last character of an abbreviation.
+
+## Multiple Screens
+
+Nudge My Window is designed to only work on the screen where the mouse pointer currently resides.
+
+So, for example, if you have the topmost window of your frontmost application on the second screen but the mouse pointer is currently on the first screen then the window will be transferred over to the first screen.
 
 ## Built-in Commands
 
@@ -144,14 +152,18 @@ The `Additional Commands` directory within `Source` holds scripts that are meant
 
 `auxiliary left`  
 Places the window behind the topmost window on the left as an auxiliary window and the topmost window to the right.
-`auxiliary right`  
+
+`auxiliary right`  
 Places the window behind the topmost window on the right as an auxiliary window and the topmost window to the left.
 
 `browser quadrants`  
 Places the topmost windows of Safari, Chrome, Firefox, and Brave in each screen’s quadrant.
-`four columns`  
+
+`four columns`  
 Organizes the four topmost windows into columns.
-`quadrants`  
+
+`quadrants`  
 Organizes the four topmost windows into quadrants.
-`three columns`  
+
+`three columns`  
 Organizes the three topmost windows into columns.
