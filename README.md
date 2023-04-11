@@ -4,23 +4,37 @@ Window size and position management scripts for use with keyboard-based launcher
 
 ## Testing
 
-Open the `test.applescript` file with Apple’s Script Editor and press the run button. This will run through all built-in commands while speaking the name of each command as it is performed.
+Open the `test.applescript` file with Apple’s Script Editor and press the **Run** button. This will perform all built-in commands while speaking the name of each command as it’s nudging the window.
 
 ## Building
 
-Open the `build.applescript` file with Apple’s Script Editor and press the run button. This will create individual script files for all commands to manipulate windows with.
+Open the `build.applescript` file with Apple’s Script Editor and press the **Run** button. This will create individual script files for all commands to manipulate windows with.
 
 A dialog appears when the process is finished.
 
 ## Installation
 
-Once the build process has finished, you will find the script files you can use with LaunchBar or Alfred in the Commands directory that is created in this project's directory.
+Once the build process has finished, you will find the script files you can use with LaunchBar or Alfred in the `Build` directory that is created in the project's directory.
 
 The script files are self-contained so you can place them wherever you want.
 
+### Automatic Installation
+
+Using the shell, you can specify a directory path you wish to automatically install the script files to.
+
+```
+defaults write de.adriannier.NudgeMyWindow installLocation "~/path/to/directory"
+```
+
+To clear this setting, use the following command:
+
+```
+defaults delete de.adriannier.NudgeMyWindow installLocation
+```
+
 ## Usage
 
-Select one of the script files in the Commands directory with LaunchBar or Alfred and run it.
+Select one of the script files in the `Build` directory or in the installed location with LaunchBar or Alfred and run it.
 
 In LaunchBar for example, you could teach the abbreviation `nul` to select the script `Nudge My Window - left.scpt` or `nuot` to select the script `Nudge My Window - One Third Top.scpt`.
 
@@ -34,7 +48,7 @@ In the context of Nudge My Window the screen is defined as the area below the me
 
 While Nudge My Window supports multiple screens, it is designed to choose the screen where the mouse pointer currently resides as the target for the re-arranged window.
 
-So, for example, if you have the topmost window of your frontmost application on the second screen but the mouse pointer is currently on the first screen then the window will be arranged on the first screen.
+So, for example, if you have the topmost window of your frontmost application on the second screen, but the mouse pointer is currently on the first screen, then the window will be arranged on the first screen.
 
 ## Built-in Commands
 
