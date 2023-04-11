@@ -179,5 +179,8 @@ Organizes the four topmost windows into columns.
 `quadrants`  
 Organizes the four topmost windows into quadrants.
 
+`stack`
+Stack an arbitrary count of windows.
+
 `three columns`  
 Organizes the three topmost windows into columns.
