@@ -737,18 +737,16 @@ on targetWindow()
 					end tell
 				end tell
 				
-			else
-				
-				tell application "System Events"
-					tell (my targetProcess())
-						set foundWindow to window 1 whose subrole is "AXStandardWindow"
-						log foundWindow
-						return foundWindow
-					end tell
-				end tell
-				
 			end if
 			
+			tell application "System Events"
+				tell (my targetProcess())
+					set foundWindow to window 1 whose subrole is "AXStandardWindow"
+					log foundWindow
+					return foundWindow
+				end tell
+			end tell
+
 		on error eMsg number eNum
 			if eNum = -1719 then
 				error "targetWindow(): Process has no windows. " & eMsg number 1001
