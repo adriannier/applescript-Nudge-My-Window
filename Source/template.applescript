@@ -1,7 +1,7 @@
 use framework "Foundation"
 use framework "AppKit"
 use scripting additions
- 
+
 global gMULTI_WINDOW_MODE
 global gLAUNCH_BAR_HIDDEN
 global gTARGET_PROCESS_SPECIFIER, gTARGET_WINDOW_SPECIFIER
@@ -638,6 +638,14 @@ on targetProcess()
 	
 end targetProcess
 
+on targetProcessName()
+	
+	tell application "System Events"
+		return name of (my targetProcess())
+	end tell
+	
+end targetProcessName
+
 on setTargetProcessSpecifier(spec)
 	
 	if class of spec is integer then
@@ -716,11 +724,31 @@ on targetWindow()
 		if gTARGET_WINDOW_SPECIFIER is missing value then error 1
 	on error
 		try
-			tell application "System Events"
-				tell (my targetProcess())
-					return window 1 whose subrole is "AXStandardWindow"
+			
+			if targetProcessName() is "Teams" then
+				
+				tell application "System Events"
+					tell (my targetProcess())
+						if name of (window 1 whose subrole is "AXStandardWindow") is "Microsoft Teams Notification" then
+							set foundWindow to window 2 whose subrole is "AXStandardWindow"
+							log foundWindow
+							return foundWindow
+						end if
+					end tell
 				end tell
-			end tell
+				
+			else
+				
+				tell application "System Events"
+					tell (my targetProcess())
+						set foundWindow to window 1 whose subrole is "AXStandardWindow"
+						log foundWindow
+						return foundWindow
+					end tell
+				end tell
+				
+			end if
+			
 		on error eMsg number eNum
 			if eNum = -1719 then
 				error "targetWindow(): Process has no windows. " & eMsg number 1001
@@ -735,7 +763,9 @@ on targetWindow()
 		
 		tell application "System Events"
 			tell (my targetProcess())
-				return window gTARGET_WINDOW_SPECIFIER whose subrole is "AXStandardWindow"
+				set foundWindow to window gTARGET_WINDOW_SPECIFIER whose subrole is "AXStandardWindow"
+				log foundWindow
+				return foundWindow
 			end tell
 		end tell
 		
@@ -743,7 +773,9 @@ on targetWindow()
 		
 		tell application "System Events"
 			tell (my targetProcess())
-				return window gTARGET_WINDOW_SPECIFIER
+				set foundWindow to window gTARGET_WINDOW_SPECIFIER
+				log foundWindow
+				return foundWindow
 			end tell
 		end tell
 		
@@ -755,7 +787,9 @@ on targetWindow()
 		
 		tell application "System Events"
 			tell (my targetProcess())
-				return first window whose position is targetPosition and size is targetSize
+				set foundWindow to first window whose position is targetPosition and size is targetSize
+				log foundWindow
+				return foundWindow
 			end tell
 		end tell
 		
